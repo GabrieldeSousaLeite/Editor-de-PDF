@@ -8,8 +8,6 @@ import aspose.words as aw
 import shutil
 import glob
 import sqlite3
-import cv2
-import numpy as np
 import codecs
 
 def editor_pdf_iniciar():
@@ -69,7 +67,7 @@ def editor_pdf_iniciar():
         extrair_texto_pdf(arquivo_pdf)
 
 
-    #-----------------------------------------------------------------------------------------
+    #------------------------------------------------------------------------------------------------------------------------------
 
     diretorio_atual = os.path.dirname(os.path.abspath(__file__))
 
@@ -110,7 +108,7 @@ def editor_pdf_iniciar():
 
                         arquivo_txt.write(novo_texto + '\n')
 
-    #----------------------------------------------------------------------------------------
+    #------------------------------------------------------------------------------------------------------------------------------
     # Obtém o diretório atual
     diretorio_atual = os.path.dirname(os.path.abspath(__file__))
 
@@ -146,7 +144,7 @@ def editor_pdf_iniciar():
 
                         arquivo_txt.write(novo_texto + '\n')
 
-    #-------------------------------------------------------------------------------------------
+    #------------------------------------------------------------------------------------------------------------------------------
 
     # Obtém o diretório do código-fonte
     diretorio_atual = os.path.dirname(os.path.abspath(__file__))
@@ -206,7 +204,7 @@ def editor_pdf_iniciar():
             with open(caminhos_arquivos[f][1], 'w', encoding='utf-8') as arquivo_atualizado:
                 arquivo_atualizado.writelines(linhas)
 
-    #----------------------------------------------------------------------------------------------
+    #------------------------------------------------------------------------------------------------------------------------------
 
     def get_first_pdf_filename():
         pdf_files = glob.glob("*.pdf")
@@ -252,7 +250,7 @@ def editor_pdf_iniciar():
 
     percorrer_diretorios(diretorio_atual, substituicoes)
 
-    #---------------------------------------------------------------------------------------
+    #------------------------------------------------------------------------------------------------------------------------------
 
     diretorio_atual = os.getcwd()  # Obtém o diretório atual
     contador_arquivos_txt = 0
@@ -283,7 +281,7 @@ def editor_pdf_iniciar():
     print("Número total de arquivos .txt:", contador_arquivos_txt)
 
 
-    #----------------------------------------------------------------------------------------
+    #------------------------------------------------------------------------------------------------------------------------------
 
     for c in range(1):
         diretorio_atual = os.path.dirname(os.path.abspath(__file__))
@@ -319,7 +317,8 @@ def editor_pdf_iniciar():
                     # Abre o arquivo em modo de escrita
                     with open(caminho_arquivo, "w", encoding='utf-8') as arquivo_txt:
                         arquivo_txt.write("\n".join(linhas_filtradas))
-    #----------------------------------------------------------------------------------------------
+                        
+    #------------------------------------------------------------------------------------------------------------------------------
 
     # Obtém o diretório do código-fonte
     diretorio_atual = os.path.dirname(os.path.abspath(__file__))
@@ -385,7 +384,7 @@ def editor_pdf_iniciar():
 
     print('Total de ocorrências:', ocorrencias)
 
-    #---------------------------------------------------------------------------------------------
+    #------------------------------------------------------------------------------------------------------------------------------
 
     # Obtém o diretório atual do script
     diretorio_atual = os.path.dirname(os.path.abspath(__file__))
@@ -420,7 +419,7 @@ def editor_pdf_iniciar():
     else:
         print('Nenhum arquivo PDF encontrado no diretório atual.')
         
-    #-----------------------------------------------------------------------------------------
+    #------------------------------------------------------------------------------------------------------------------------------
 
     # Obtém o diretório atual do script
     diretorio_atual = os.path.dirname(os.path.abspath(__file__))
@@ -439,7 +438,7 @@ def editor_pdf_iniciar():
         # Conta o número de arquivos no diretório pesquisado
         num_arquivos = len(arquivos)
 
-    #-------------------------------------------------------------------------------------
+    #------------------------------------------------------------------------------------------------------------------------------
 
     # Nome dos diretórios a serem criados
     diretorios = ['imagens', 'documentos']
@@ -457,7 +456,7 @@ def editor_pdf_iniciar():
             # Cria o diretório
             os.makedirs(caminho_diretorio)
 
-    #-------------------------------------------------------------------------------------
+    #------------------------------------------------------------------------------------------------------------------------------
 
     imageIndex = 0
     documento = 1
@@ -501,7 +500,7 @@ def editor_pdf_iniciar():
                 shape.image_data.save(os.path.join(imagens_directory, imageFileName))
                 imageIndex += 1
 
-    #----------------------------------------------------------------
+    #------------------------------------------------------------------------------------------------------------------------------
 
     # Obtém o diretório atual do script
     diretorio_atual = os.path.dirname(os.path.abspath(__file__))
@@ -542,7 +541,7 @@ def editor_pdf_iniciar():
     else:
         print(f"O diretório '{diretorio_imagens}' não foi encontrado.")
 
-    #------------------------------------------------------------------
+    #------------------------------------------------------------------------------------------------------------------------------
 
     # Obtém o caminho absoluto do diretório do script atual
     diretorio_script = os.path.dirname(os.path.abspath(__file__))
@@ -577,7 +576,7 @@ def editor_pdf_iniciar():
     imagem_diretorio.close()
     imagem_referencia.close()
 
-    #------------------------------------------------------------------------------------------
+    #------------------------------------------------------------------------------------------------------------------------------
 
     def excluir_primeira_e_ultima_imagem(diretorio):
         # Obter a lista de arquivos no diretório
@@ -607,7 +606,7 @@ def editor_pdf_iniciar():
     # Chamar a função para excluir a primeira e a última imagem
     excluir_primeira_e_ultima_imagem(diretorio_imagens)
 
-    #------------------------------------------------------------------------------------------
+    #------------------------------------------------------------------------------------------------------------------------------
 
     def extract_number(filename):
         match = re.search(r'_(\d+)\.txt$', filename)
@@ -723,7 +722,7 @@ def editor_pdf_iniciar():
 
     imagem.close()
 
-    #------------------------------------------------------------------------------------------
+    #------------------------------------------------------------------------------------------------------------------------------
     
     # Obtém o diretório atual
     diretorio_atual = os.getcwd()
